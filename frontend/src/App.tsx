@@ -50,8 +50,8 @@ function App() {
 
 
   useEffect(() =>{
-    console.log(`You clicked ${count} times`);
-  },[count]);
+    
+  },[]);
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
@@ -63,9 +63,7 @@ function App() {
         >
         <>
           <Header />
-          <div>
-            <button onClick={() => setCount(count + 1)}>Button</button>
-          </div>
+          
           <Hero />
         </>
         </ConnectKitProvider>
