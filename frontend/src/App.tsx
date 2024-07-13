@@ -1,15 +1,16 @@
-import './App.css'
+import "./App.css";
 
 // Importing Components
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { CardWithForm } from "./components/parts/Card";
 
 function App() {
-
   return (
     <>
-      <Button onClick={() => alert("Selam")}>Button</Button>
+      <CardWithForm></CardWithForm>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
