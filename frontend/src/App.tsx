@@ -55,9 +55,10 @@ function App() {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <ConnectKitProvider 
-           customTheme={{
-            
+        <ConnectKitProvider
+          customTheme={{
+            "--ck-accent-color": "#00D54B",
+            "--ck-accent-text-color": "#ffffff",
           }}
         >
         <>
