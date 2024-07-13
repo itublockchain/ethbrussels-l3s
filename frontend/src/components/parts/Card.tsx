@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function CardWithForm() {
   const [payValue, setPayValue] = useState("0.003");
+  //const [earnValue, setEarnValue] = useState("0.00002");
 
-  const handleChange = (char: string) => {
+  const checkChar = (char: string) => {
+    if (char.length === 10) {
+      return;
+    }
     setPayValue(char);
   };
 
@@ -25,8 +29,8 @@ export function CardWithForm() {
               <input
                 type="number"
                 value={payValue}
-                onChange={(e) => handleChange(e.target.value)}
-                className="w-full text-2xl font-bold text-gray-900 bg-transparent border-none focus:outline-none h-10 leading-tight box-border"
+                onChange={(e) => checkChar(e.target.value)}
+                className="w-full text-2xl font-bold text-gray-900 bg-transparent border-none focus:outline-none leading-4"
               />
               <div className="text-sm text-gray-500 text-left">
                 ${calculateDollarValue(payValue)}
@@ -48,7 +52,7 @@ export function CardWithForm() {
           </label>
           <div className="flex items-center justify-between p-4 bg-white border rounded-lg">
             <div className="flex-1">
-              <div className="w-full text-2xl font-bold text-gray-900 text-left min-w-[100px] h-10 leading-tight box-border">
+              <div className="w-full text-2xl font-bold text-gray-900 text-left min-w-[100px] min-h-8">
                 {payValue}
               </div>
               <div className="text-sm text-gray-500 text-left">
@@ -57,7 +61,7 @@ export function CardWithForm() {
             </div>
             <div className="flex items-center space-x-2 ml-2">
               <img
-                src="https://cryptologos.cc/logos/weth-logo.png"
+                src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png"
                 alt="WETH"
                 className="w-6 h-6"
               />
