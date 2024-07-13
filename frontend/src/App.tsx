@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
 import './App.css'
 import Header from './components/custom/Header'
-import Hero from './components/custom/Hero'
+
+
+import theme from "./theme (2).json"
 
 // Importing Components
 import { Button } from "@/components/ui/button"
@@ -56,15 +58,12 @@ function App() {
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
         <ConnectKitProvider
-          customTheme={{
-            "--ck-accent-color": "#00D54B",
-            "--ck-accent-text-color": "#ffffff",
-          }}
+          theme="auto"
+          customTheme={theme}
         >
         <>
           <Header />
-          
-          <Hero />
+
         </>
         </ConnectKitProvider>
       </QueryClientProvider>
