@@ -1,24 +1,20 @@
-import { useEffect } from 'react'
-import './App.css'
-import Header from './components/custom/Header'
+import { useEffect } from "react";
+import Header from "./components/custom/Header";
 
-
-import theme from "./theme (2).json"
+import theme from "./theme (2).json";
 
 // Importing Components
-import { Button } from "@/components/ui/button"
-import React from 'react';
+import { Button } from "@/components/ui/button";
+import React from "react";
 import { WagmiProvider, createConfig, http } from "wagmi";
 import { arbitrum, mainnet, optimism } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
-
+import CardWithForm from "./components/custom/CustomCard";
 
 function App() {
-
   const [count, setCount] = React.useState(0);
   const queryClient = new QueryClient();
-
 
   const config = createConfig(
     getDefaultConfig({
@@ -26,49 +22,37 @@ function App() {
       chains: [mainnet, arbitrum, optimism],
       transports: {
         // RPC URL for each chain
-        [mainnet.id]: http(
-          `https://eth-mainnet.g.alchemy.com/v2/demo`,
-        ),
-        [arbitrum.id]: http(
-          `https://arb-mainnet.g.alchemy.com/v2/demo`,
-        ),
-        [optimism.id]: http(
-          `https://opt-mainnet.g.alchemy.com/v2/demo`,
-        ),
+        [mainnet.id]: http(`https://eth-mainnet.g.alchemy.com/v2/demo`),
+        [arbitrum.id]: http(`https://arb-mainnet.g.alchemy.com/v2/demo`),
+        [optimism.id]: http(`https://opt-mainnet.g.alchemy.com/v2/demo`),
       },
-  
+
       // Required API Keys
       walletConnectProjectId: "3056645e739ff848b9c18c994f12cc43",
-  
+
       // Required App Info
       appName: "Your App Name",
-  
+
       // Optional App Info
       appDescription: "Your App Description",
       appUrl: "https://family.co", // your app's url
       appIcon: "https://family.co/logo.png", // your app's icon, no bigger than 1024x1024px (max. 1MB)
-    }),
+    })
   );
 
-
-  useEffect(() =>{
-    
-  },[]);
+  useEffect(() => {}, []);
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <ConnectKitProvider
-          theme="auto"
-          customTheme={theme}
-        >
-        <>
-          <Header />
-
-        </>
+        <ConnectKitProvider theme="auto" customTheme={theme}>
+          <div className="border-2 border-red-500">
+            <Header />
+            <CardWithForm />
+          </div>
         </ConnectKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
   );
 }
 
-export default App
+export default App;
