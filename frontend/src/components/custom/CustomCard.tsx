@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-export function CardWithForm() {
+function CardWithForm() {
   const [payValue, setPayValue] = useState("0.003");
 
   const handleChange = (char: string) => {
@@ -14,13 +13,13 @@ export function CardWithForm() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="w-[400px] p-6 bg-white rounded-lg shadow-md">
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="w-[400px] p-6 bg-black border-white border-4 rounded  shadow-md">
         <div className="mb-6">
-          <label className="block mb-2 text-lg font-medium text-gray-900 text-left">
+          <label className="block mb-2 text-lg font-medium text-white text-left">
             You pay
           </label>
-          <div className="flex items-center justify-between p-4 bg-gray-100 rounded-lg">
+          <div className="flex items-center justify-between p-4 bg-gray-100 rounded">
             <div className="flex-1">
               <input
                 type="number"
@@ -43,10 +42,10 @@ export function CardWithForm() {
           </div>
         </div>
         <div className="mb-6">
-          <label className="block mb-2 text-lg font-medium text-gray-900 text-left">
+          <label className="block mb-2 text-lg font-medium text-white text-left">
             You earn
           </label>
-          <div className="flex items-center justify-between p-4 bg-white border rounded-lg">
+          <div className="flex items-center justify-between p-4 bg-white border rounded">
             <div className="flex-1">
               <div className="w-full text-2xl font-bold text-gray-900 text-left min-w-[100px] h-10 leading-tight box-border">
                 {payValue}
@@ -65,7 +64,7 @@ export function CardWithForm() {
             </div>
           </div>
         </div>
-        <button className="w-full py-3 text-white bg-gray-900 rounded-lg hover:bg-gray-700">
+        <button className="w-full py-3 text-white bg-black rounded hover:bg-gray-800">
           Stake
         </button>
       </div>
