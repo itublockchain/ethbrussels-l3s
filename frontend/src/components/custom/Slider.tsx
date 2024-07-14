@@ -4,7 +4,7 @@ export const Slider = () => {
   return (
     <div className="w-[100vw] h-[72px] mt-8 mb-8">
       <div className="flex overflow-hidden space-x-8">
-        {new Array(10).fill(0).map((_, i) => (
+        {new Array(10).fill(0).map((_) => (
           <>
             <img
               src={"/main/hyperlane.png"}

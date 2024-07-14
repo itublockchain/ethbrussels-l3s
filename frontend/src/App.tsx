@@ -2,18 +2,15 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
-import Header from "./components/custom/Header";
 import theme from "./theme (2).json";
 
 import { WagmiProvider, createConfig, http } from "wagmi";
 import { arbitrum, mainnet, optimism } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
-import CardWithForm from "./components/custom/CustomCard";
 import { l3s } from "./components/customChain";
 
 function App() {
-  const [count, setCount] = React.useState(0);
   const queryClient = new QueryClient();
 
   const config = createConfig(

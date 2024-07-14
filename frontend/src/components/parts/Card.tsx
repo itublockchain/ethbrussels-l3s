@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export function CardWithForm() {
   const [payValue, setPayValue] = useState("0.003");

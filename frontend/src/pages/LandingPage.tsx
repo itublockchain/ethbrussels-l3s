@@ -1,5 +1,4 @@
 // src/pages/LandingPage.tsx
-import React from "react";
 
 import { Slider } from "@/components/custom/Slider";
 import { useNavigate } from "react-router-dom";
