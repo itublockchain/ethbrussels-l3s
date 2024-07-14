@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import './App.css'
-
-// Importing Components
-import { Button } from "@/components/ui/button"
-
-function App() {
-
-  return (
-    <>
-      <Button onClick={() => alert("Selam")}>Button</Button>
-    </>
-  )
-=======
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/LandingPage";
@@ -39,7 +25,7 @@ function App() {
         [mainnet.id]: http(`https://eth-mainnet.g.alchemy.com/v2/demo`),
         [arbitrum.id]: http(`https://arb-mainnet.g.alchemy.com/v2/demo`),
         [optimism.id]: http(`https://opt-mainnet.g.alchemy.com/v2/demo`),
-        [l3s.id]: http("http://46.101.137.172:8449"),
+        [l3s.id]: http("http://rpc.l3stake.xyz/"),
       },
 
       // Required API Keys
@@ -69,7 +55,6 @@ function App() {
       </QueryClientProvider>
     </WagmiProvider>
   );
->>>>>>> feature/header
 }
 
 export default App;
