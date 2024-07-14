@@ -5,6 +5,7 @@
   "--ck-qr-border-radius": "16px",
   "--ck-connectbutton-font-size": "14px",
   "--ck-connectbutton-color": "#ffffff",
+<<<<<<< HEAD
   "--ck-connectbutton-background": "#121B32",
   "--ck-connectbutton-background-secondary": "#FFFFFF",
   "--ck-connectbutton-border-radius": "6px",
@@ -14,6 +15,17 @@
   "--ck-connectbutton-hover-box-shadow": "0 0 0 0 #ffffff",
   "--ck-connectbutton-active-color": "#373737",
   "--ck-connectbutton-active-background": "#EAECF1",
+=======
+  "--ck-connectbutton-background": "#000",
+  "--ck-connectbutton-background-secondary": "#FFFFFF",
+  "--ck-connectbutton-border-radius": "6px",
+  "--ck-connectbutton-box-shadow": "0 0 0 0 #ffffff",
+  "--ck-connectbutton-hover-color": "#ffffff",
+  "--ck-connectbutton-hover-background": "#000",
+  "--ck-connectbutton-hover-box-shadow": "0 0 0 0 #ffffff",
+  "--ck-connectbutton-active-color": "#ffffff",
+  "--ck-connectbutton-active-background": "#000",
+>>>>>>> feature/header
   "--ck-connectbutton-active-box-shadow": "0 0 0 0 #ffffff",
   "--ck-connectbutton-balance-color": "#373737",
   "--ck-connectbutton-balance-background": "#fff",
