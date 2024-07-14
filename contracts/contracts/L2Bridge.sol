@@ -19,7 +19,7 @@ interface IHypERC20 {
     ) external payable;
 }
 
-contract OpSepoliaBridge is Ownable {
+contract Bridge is Ownable {
     using Address for address payable;
     using TypeCasts for address;
 
@@ -33,7 +33,12 @@ contract OpSepoliaBridge is Ownable {
     mapping(uint256 => bool) public processedNonces;
     uint256 public nonce;
 
-    constructor(address _mailbox, uint32 _l3Domain, address _l3Bridge) {
+    constructor(
+        address _mailbox,
+        uint32 _l3Domain,
+        address _l3Bridge,
+        address _initOwner
+    ) Ownable(_initOwner) {
         require(_mailbox != address(0), "Invalid mailbox address");
         require(_l3Bridge != address(0), "Invalid L3 bridge address");
 
