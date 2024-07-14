@@ -2,6 +2,7 @@
 import React from "react";
 
 import { Slider } from "@/components/custom/Slider";
+import { useNavigate } from "react-router-dom";
 
 const qa = [
   {
@@ -27,12 +28,13 @@ const qa = [
 ];
 
 export default function Home() {
+  const nav = useNavigate();
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col bg-black">
       <div
-        className="h-screen w-screen"
+        className="h-screen w-screen bg-[#2E2E2E]"
         style={{
-          backgroundImage: "url('/main/bg.png')",
+          backgroundImage: "url(/main/bg.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -49,6 +51,7 @@ export default function Home() {
             />
             <div className="flex justify-center cursor-pointer hover:scale-102 transition-all">
               <img
+                onClick={() => nav("/dashboard")}
                 alt="launch-button"
                 className="h-[62px] mx-aut"
                 src={"/main/launch-button.png"}

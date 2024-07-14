@@ -1,7 +1,7 @@
 import { useState } from "react";
 import eth from "../../assets/images/ETH.png";
 export function CardWithForm() {
-  const [payValue, setPayValue] = useState("0.003");
+  const [payValue, setPayValue] = useState("0.000");
 
   const handleChange = (char: string) => {
     setPayValue(char);
@@ -10,11 +10,11 @@ export function CardWithForm() {
   const calculateDollarValue = (value: string) => {
     const numericValue = parseFloat(value);
     if (isNaN(numericValue)) return "0.00";
-    return (numericValue * 2).toFixed(3); // 2x ile çarpma
+    return (numericValue * 3171).toFixed(3); // 2x ile çarpma
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="flex justify-center items-center min-h-screen ">
       <style>
         {`
           input[type="number"]::-webkit-inner-spin-button,
@@ -29,7 +29,7 @@ export function CardWithForm() {
         `}
       </style>
 
-      <div className="w-[400px] p-6 bg-white rounded-lg shadow-md">
+      <div className="w-[400px] p-6 bg-black rounded shadow-md border-white border-4">
         <div className="mb-6">
           <label className="block mb-2 text-lg font-medium text-white text-left">
             You pay
@@ -71,7 +71,7 @@ export function CardWithForm() {
             </div>
           </div>
         </div>
-        <button className="w-full py-3 text-white bg-black rounded hover:bg-gray-800">
+        <button className="w-full py-3 text-white bg-black rounded hover:bg-[#2E2E2E]">
           Stake
         </button>
       </div>
