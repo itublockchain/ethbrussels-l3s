@@ -1,16 +1,17 @@
 import { useState } from "react";
 import eth from "../../assets/images/ETH.png";
 export function CardWithForm() {
-  const [payValue, setPayValue] = useState("0.000");
+  const [payValue, setPayValue] = useState("0");
 
   const handleChange = (char: string) => {
-    setPayValue(char);
+    if (char.length <= 8) {
+      setPayValue(char);
+    }
   };
-
   const calculateDollarValue = (value: string) => {
     const numericValue = parseFloat(value);
     if (isNaN(numericValue)) return "0.00";
-    return (numericValue * 3171).toFixed(3); // 2x ile çarpma
+    return (numericValue * 3171).toFixed(3); // math algorithm
   };
 
   return (

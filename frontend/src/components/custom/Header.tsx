@@ -1,18 +1,30 @@
 import { ConnectKitButton } from "connectkit";
 import { useAccount } from "wagmi";
 import logo from "../../assets/images/logo1.png";
+import { Button } from "../ui/button";
 
 function Header() {
   const { address } = useAccount();
   console.log(address);
   return (
     <header>
-      <div className="container flex flex-row justify-between h-16 p-4">
-        <div className="p-50">
-          <img src={logo}></img>
+      <div className="container flex flex-row justify-between items-center h-16 p-4">
+        <div className="flex items-center">
+          <img src={logo} className="mr-4" alt="logo" />
+          <Button
+            onClick={() => {}}
+            className="bg-transparent text-white hover:bg-transparent mr-4 hover:bg-[#2E2E2E] rounded-full"
+          >
+            Docs
+          </Button>
+          <Button
+            onClick={() => {}}
+            className="bg-transparent text-white hover:bg-transparent hover:bg-[#2E2E2E] rounded-full"
+          >
+            Add to Metamask
+          </Button>
         </div>
-
-        <div className="">
+        <div>
           <ConnectKitButton />
         </div>
       </div>
