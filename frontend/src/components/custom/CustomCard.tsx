@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import eth from "../../assets/images/ETH.png";
 export function CardWithForm() {
   const [payValue, setPayValue] = useState("0.003");
 
@@ -15,6 +15,20 @@ export function CardWithForm() {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <style>
+        {`
+          input[type="number"]::-webkit-inner-spin-button,
+          input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+          input[type="number"] {
+            -moz-appearance: textfield; /* Firefox */
+            appearance: none; /* Çoğu modern tarayıcı için */
+          }
+        `}
+      </style>
+
       <div className="w-[400px] p-6 bg-white rounded-lg shadow-md">
         <div className="mb-6">
           <label className="block mb-2 text-lg font-medium text-gray-900 text-left">
@@ -34,11 +48,11 @@ export function CardWithForm() {
             </div>
             <div className="flex items-center space-x-2 ml-2">
               <img
-                src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png"
-                alt="USDC"
+                src={eth}
+                alt="ETH"
                 className="w-6 h-6"
               />
-              <span className="text-lg font-medium text-gray-900">USDC</span>
+              <span className="text-lg font-medium text-gray-900">ETH</span>
             </div>
           </div>
         </div>
@@ -57,11 +71,11 @@ export function CardWithForm() {
             </div>
             <div className="flex items-center space-x-2 ml-2">
               <img
-                src="https://cryptologos.cc/logos/weth-logo.png"
-                alt="WETH"
+                src={eth}
+                alt="ETH"
                 className="w-6 h-6"
               />
-              <span className="text-lg font-medium text-gray-900">WETH</span>
+              <span className="text-lg font-medium text-gray-900">ETH</span>
             </div>
           </div>
         </div>
