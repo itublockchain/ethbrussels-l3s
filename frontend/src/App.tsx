@@ -4,7 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import theme from "./theme (2).json";
 
 import { WagmiProvider, createConfig, http } from "wagmi";
-import { arbitrum, mainnet, optimism } from "wagmi/chains";
+import { arbitrumSepolia, optimismSepolia } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
 import { l3s } from "./components/customChain";
@@ -15,13 +15,11 @@ function App() {
   const config = createConfig(
     getDefaultConfig({
       // Your dApps chains
-      chains: [mainnet, arbitrum, optimism, l3s],
+      chains: [arbitrumSepolia, optimismSepolia, l3s],
       transports: {
         // RPC URL for each chain
-        [mainnet.id]: http(`https://eth-mainnet.g.alchemy.com/v2/demo`),
-        [arbitrum.id]: http(`https://arb-mainnet.g.alchemy.com/v2/demo`),
-        [optimism.id]: http(`https://opt-mainnet.g.alchemy.com/v2/demo`),
         [l3s.id]: http("http://rpc.l3stake.xyz/"),
+        [arbitrumSepolia.id]: http("https://sepolia-rollup.arbitrum.io/rpc"),
       },
 
       // Required API Keys

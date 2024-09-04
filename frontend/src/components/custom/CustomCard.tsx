@@ -1,6 +1,15 @@
 import { useState } from "react";
 import eth from "../../assets/images/ETH.png";
+import { parseEther } from "viem";
+import { useContractWrite } from "wagmii";
+import { importantABI } from "@/abis/ABI";
+
 export function CardWithForm() {
+  const { write } = useContractWrite({
+    address: "0x7f7f7f1EBc994240f2e75c8a39FfEB8946965C3C",
+    abi: importantABI,
+    functionName: "deposit",
+  });
   const [payValue, setPayValue] = useState("0");
 
   const handleChange = (char: string) => {
@@ -11,9 +20,8 @@ export function CardWithForm() {
   const calculateDollarValue = (value: string) => {
     const numericValue = parseFloat(value);
     if (isNaN(numericValue)) return "0.00";
-    return (numericValue * 3171).toFixed(3); // math algorithm
+    return (numericValue * 3100).toFixed(3); // math algorithm
   };
-
   return (
     <div className="flex justify-center items-center min-h-screen ">
       <style>
@@ -72,7 +80,15 @@ export function CardWithForm() {
             </div>
           </div>
         </div>
-        <button className="w-full py-3 text-white bg-black rounded hover:bg-[#2E2E2E]">
+        <button
+          className="w-full py-3 text-white bg-black rounded hover:bg-[#2E2E2E]"
+          onClick={() => {
+            console.log("Stake button clicked");
+            write({
+              value: parseEther(payValue),
+            });
+          }}
+        >
           Stake
         </button>
       </div>

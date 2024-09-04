@@ -1,11 +1,8 @@
 import { ConnectKitButton } from "connectkit";
-import { useAccount } from "wagmi";
 import logo from "../../assets/images/logo1.png";
 import { Button } from "../ui/button";
 
 function Header() {
-  const { address } = useAccount();
-  console.log(address);
   return (
     <header>
       <div className="container flex flex-row justify-between items-center h-16 p-4">
